@@ -103,16 +103,27 @@ Optional (point 2): relation to design pattern(s).
 
 ## Overall experience
 
-What are your main take-aways from this project? What did you learn?
+In this project we learned how to work in the open-source community and more generally how to work with clients. 
+We had to adapt our coding style to the existing one of JabRef. We sometimes had ideas of how to resolve an issue
+but that wasn't the way our client wanted us to tackle it. In a nutshell, we learned how to discuss with a client understand their 
+needs and wants and bring solution to them.
 
-How did you grow as a team, using the Essence standard to evaluate yourself?
+Moreover, we learned how to enter an existing project. It was hard at first not to be lost due to the size of JabRef and the number of files, but 
+thanks to their great extended documentation and their reactive members this was quite a nice journey.
+
+At the end of this assignment, we evaluated our team as being in the state "Collaborating". Having a single common issue for our team really 
+made us work together and made us feel united. We communicated a lot during this assignment since we worked on the same file / functions
+we had to code on top of each other, so it was really important to understand what each of us had done. This assignment also 
+rebuild the trust we had in our team since everyone was on time with their tasks. 
+
+
 
 Optional (point 6): How would you put your work in context with best software engineering practice?
 
-Optional (point 7): Is there something special you want to mention here?
-
 
 ## P+
+
+_TODO : Choose 4 points_ 
 
 As a recapitulation here are the points we've achieved for P+. 
 
