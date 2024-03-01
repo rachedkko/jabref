@@ -64,28 +64,38 @@ The monitor of our directory was an instance of this DefaultFileUpdateMonitor cl
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
+_TODO_ Non-optional : Requirements related to the functionality are identified and described in a systematic way. Each requirement has a name (ID), title, and description. The description can be one paragraph per require- ment.
+
 Optional (point 3): trace tests to requirements.
 
 ## Code changes
 
 ### Patch
 
-(copy your changes or the add git command to show them)
+To see our changes you may go to the branch `latexcitation-filemonitor-issue-10585` and run the command `git diff d81192369eb499421c04588e4e0cb0993215607c`
+which corresponds to the last commit before any of our changes. 
 
-git diff ...
-
-Optional (point 4): the patch is clean.
+Optional (point 4): To check that our patch is clean, the easiest way to do so is by going in the Action tab of Jabref
+and looking for our final commit (_TODO : put link of this_). As you can see, all tests checking for style pass, which means 
+that our patch respects the style of JabRef. You may also go on the  `latexcitation-filemonitor-issue-10585` and take a look at the 
+latest code on it to check that our patch is clean. 
 
 Optional (point 5): considered for acceptance (passes all automated checks).
+_TODO : link to closed issue / merged pull request, if it has been accepted or remove this section_
 
 ## Test results
 
-Overall results with link to a copy or excerpt of the logs (before/after
-refactoring).
+The final version of the tests ran on our code can be found here : 
+
+_TODO : insert link
+to action in JabRef, the last commit or our path_
 
 ## UML class diagram and its description
 
 ### Key changes/classes affected
+
+_TODO_ Non-optional : Key features affected by the issue are shown in UML class diagrams (for refactorings: include be- fore/after).
+Note: you do not have to show classes, fields, or methods that are not relevant, unless they help with the overall understanding. Typically, the diagram would contain 5–10 classes.
 
 Optional (point 1): Architectural overview.
 
@@ -100,3 +110,34 @@ How did you grow as a team, using the Essence standard to evaluate yourself?
 Optional (point 6): How would you put your work in context with best software engineering practice?
 
 Optional (point 7): Is there something special you want to mention here?
+
+
+## P+
+
+As a recapitulation here are the points we've achieved for P+. 
+
+3. Relevant test cases (existing tests and updated/new tests related to the refactored code) are traced to requirements.
+
+
+4. Your patch is clean in that it (a) removes but does not comment out obsolete code and (b) does not produce extraneous output that is not required for your task (such as debug output) and (c) does not add unnecessary whitespace changes (such as adding or removing empty lines).
+
+
+
+6. You can argue critically about the benefits, drawbacks, and limitations of your work carried out, in the context of current software engineering practice, such as the SEMAT kernel (covering alphas other than Team/Way of Working).
+
+
+5. Patches are accepted by the project, or considered for acceptance. (This requires a link to an accepted commit, or a discussion item.) Note: the patch must be submitted by the assignment deadline, but it may be accepted later.
+
+
+OR 
+8. In the context of Jonas Öberg's lecture last week, where do you put the project that you have chosen in an ecosystem of open-source and closed-source software? Is your project (as it is now) something that has replaced or can replace similar proprietary software? Why (not)?
+
+
+
+### TODO 
+
+- For P : point 4 and 7 
+
+- For P+ : point 3 and 8 
+
+- At then end put links that are needed
