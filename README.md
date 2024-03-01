@@ -25,16 +25,16 @@ For each team member, how much time was spent in
 
 | /                                        | Roxanne | Alexander | Rached  | Iley    | Marcus |
 |------------------------------------------|---------|-----------|---------|---------|--------|
-| 1. plenary discussions/meetings          | 3h      |           | .....   | .....   | ....   |
-| 2. discussions within parts of the group | 0.5h    | .         | ....    | ...     | ....   |
+| 1. plenary discussions/meetings          | 3.5h    |           | .....   | .....   | ....   |
+| 2. discussions within parts of the group | 1h      | .         | ....    | ...     | ....   |
 | 3. reading documentation                 | 3h      | .         | ....    | ...     | ....   |
 | 4. configuration and setup               | 0.5h    | .         | ....    | ...     | ....   |
 | 5. analyzing code/output                 | 2h      | .         | ....    | ...     | ....   |
 | 6. writing documentation                 | 0h      | .         | ....    | ...     | ....   |
-| 7. writing code                          | 6h      | .         | ....    | ...     | ....   |
+| 7. writing code                          | 8h      | .         | ....    | ...     | ....   |
 | 8. running code                          | 2h      | .         | ....    | ...     | ....   |
-| 9. Writing the report                    | 1h      | .         | ....    | ...     | ....   |
-| **Total**                                | **18h** | .         | ....    | ...     | ....   |
+| 9. Writing the report                    | 3h      | .         | ....    | ...     | ....   |
+| **Total**                                | **23h** | .         | ....    | ...     | ....   |
 
  
 
@@ -56,9 +56,9 @@ reloaded. Our goal was to trigger a new search for LaTeX file(s) citing the sour
 directory occurs.
 
 The scope of this issue is not huge, it affects only the "LaTeX citation" tab. In the code, the main file we had to
-look at was src/main/java/org/jabref/gui/entryeditor/LatexCitationsTabViewModel.java which is the model for this 
+look at was `src/main/java/org/jabref/gui/entryeditor/LatexCitationsTabViewModel.java` which is the model for this 
 tab and contains all the logic about it, and
-src/main/java/org/jabref/gui/util/DefaultFileUpdateMonitor.java which is a class implementing FileUpdateMonitor. 
+`src/main/java/org/jabref/gui/util/DefaultFileUpdateMonitor.java` which is a class implementing FileUpdateMonitor. 
 The monitor of our directory was an instance of this DefaultFileUpdateMonitor class, and we had to alter the class a bit.  
 
 
@@ -75,6 +75,29 @@ Optional (point 3): trace tests to requirements.
 To see our changes you may go to the branch `latexcitation-filemonitor-issue-10585` and run the command `git diff d81192369eb499421c04588e4e0cb0993215607c`
 which corresponds to the last commit before any of our changes. 
 
+
+#### More details 
+###### Alexander 
+_TODO_
+
+###### Roxanne 
+I worked on the fact that the monitor wasn't working recursively on the monitor, therefore I wrote the function 
+`listenerOnDirectory` in `LatexCitationsTabViewModel.java`. Then I worked on the fact that our first trials, if we changed
+directories and a change happened in an old directory, reload was triggered. That was because we called `.removeListener` was called 
+with a `FileUpdateListener` that didn't match the one in `.addListenerOnDirector`. Therefore the listener was never removed. 
+I created a map to keep track of listeners which made sure that listeners were probably removed. 
+
+###### Marcus 
+_TODO_
+
+###### Rached 
+_TODO_
+
+###### Iley 
+_TODO_
+
+
+#### Optional
 Optional (point 4): To check that our patch is clean, the easiest way to do so is by going in the Action tab of Jabref
 and looking for our final commit (_TODO : put link of this_). As you can see, all tests checking for style pass, which means 
 that our patch respects the style of JabRef. You may also go on the  `latexcitation-filemonitor-issue-10585` and take a look at the 
