@@ -17,7 +17,11 @@ to resolve. Helped by the following list of open-source projects : https://githu
 
 We had to search for a few hours to find a project with a reactive community, opened
 to assign issues to beginners, and with good documentation. We finally found JabRef which met
-all of our criteria. 
+all of our criteria.
+
+The onboarding experience in JabRef itself was really good. The documentation to setup your IDE and environment to
+start developing was really detailed and worked flawlessly. The maintainers are responsive to your questions and
+will try to lead the issue solving in the right direction if you make a draft pull request.
 
 ## Effort spent
 
@@ -25,18 +29,16 @@ For each team member, how much time was spent in
 
 | /                                        | Roxanne | Alexander | Rached  | Iley    | Marcus |
 |------------------------------------------|---------|-----------|---------|---------|--------|
-| 1. plenary discussions/meetings          | 3h      |           | .....   | .....   | ....   |
-| 2. discussions within parts of the group | 0.5h    | .         | ....    | ...     | ....   |
-| 3. reading documentation                 | 3h      | .         | ....    | ...     | ....   |
-| 4. configuration and setup               | 0.5h    | .         | ....    | ...     | ....   |
-| 5. analyzing code/output                 | 2h      | .         | ....    | ...     | ....   |
-| 6. writing documentation                 | 0h      | .         | ....    | ...     | ....   |
-| 7. writing code                          | 6h      | .         | ....    | ...     | ....   |
-| 8. running code                          | 2h      | .         | ....    | ...     | ....   |
-| 9. Writing the report                    | 1h      | .         | ....    | ...     | ....   |
-| **Total**                                | **18h** | .         | ....    | ...     | ....   |
-
- 
+| 1. plenary discussions/meetings          | 3h      | 3h        | .....   | .....   | ....   |
+| 2. discussions within parts of the group | 0.5h    | 0.5h      | ....    | ...     | ....   |
+| 3. reading documentation                 | 3h      | 1h        | ....    | ...     | ....   |
+| 4. configuration and setup               | 0.5h    | 1h        | ....    | ...     | ....   |
+| 5. analyzing code/output                 | 2h      | 5h        | ....    | ...     | ....   |
+| 6. writing documentation                 | 0h      | 0.5h      | ....    | ...     | ....   |
+| 7. writing code                          | 6h      | 8h        | ....    | ...     | ....   |
+| 8. running code                          | 2h      | 1h        | ....    | ...     | ....   |
+| 9. Writing the report                    | 1h      | 1h        | ....    | ...     | ....   |
+| **Total**                                | **18h** | **21h**   | ....    | ...     | ....   |
 
 For setting up tools and libraries (step 4), enumerate all dependencies
 you took care of and where you spent your time, if that time exceeds
@@ -64,7 +66,42 @@ The monitor of our directory was an instance of this DefaultFileUpdateMonitor cl
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
-_TODO_ Non-optional : Requirements related to the functionality are identified and described in a systematic way. Each requirement has a name (ID), title, and description. The description can be one paragraph per require- ment.
+Feature: Add FileMonitor for LaTeX citations
+
+Initial Requirement (From Issue Specification):
+
+- Add FileMonitor to LaTeX Citation functionality **(MAINREQ)**
+
+  - The main goal of solving the issue is to add file monitoring functionality to the LaTeX Citations tab so that 
+    whenever a file within the tracked directory is changed, the tab is refreshed so that the user does not
+    have to manually refresh the tab whenever a change is made
+
+- Use DefaultFileUpdateMonitor **(USEDEFAULT)**
+
+  - The maintainers wants us to use their DefaultFileUpdateMonitor class instead of
+    using the API directly from WatchService or other libraries that can solve this issue
+
+- Have proper Shutdown at the end **(SHUTDOWN)**
+
+  - Since the functionality opens listeners to files to track changes and trigger a refresh event,
+    these should be properly shut down whenever the user closes the tab where LaTeX Citation tab is accessible from
+    and when the program is shutdown itself
+
+Further Requirements (From Development and Reviews)
+
+- Add Listener to Files not Directory **(COLLECTFILES)**
+
+  - The solution design should add a listener to all .tex files individually and not listen to a full directory
+
+- Modify LatexParser **(LATEXPARSER)**
+
+  - Upon further inquiry, the maintainers intended that one part of the solution was to modify the LatexParser as to
+    keep track of the citation keys and their .tex files
+
+- LatexParser Tests **(LATEXPARSERTESTS)**
+
+  - Along with modifications to LatexParser should come their tests
+
 
 Optional (point 3): trace tests to requirements.
 
