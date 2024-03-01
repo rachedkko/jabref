@@ -44,13 +44,23 @@ you took care of and where you spent your time, if that time exceeds
 
 ## Overview of issue(s) and work done.
 
-Title:
+Title: Add FileMonitor for LaTeX citations
 
-URL:
+URL: https://github.com/JabRef/jabref/issues/10585 
 
-Summary in one or two sentences
+Once you've created a library, you may click on one of your source. You can find a LaTeX citation tab, 
+it will ask you to select one of your directories and will search in this directory whether there is 
+one (or many) LaTeX file(s) citing the specific selected source. The issue is that if a file changes in this 
+directory or if a file is created or deleted, the LaTeX file(s) shown to the user are not automatically 
+reloaded. Our goal was to trigger a new search for LaTeX file(s) citing the source each time a change in the 
+directory occurs.
 
-Scope (functionality and code affected).
+The scope of this issue is not huge, it affects only the "LaTeX citation" tab. In the code, the main file we had to
+look at was src/main/java/org/jabref/gui/entryeditor/LatexCitationsTabViewModel.java which is the model for this 
+tab and contains all the logic about it, and
+src/main/java/org/jabref/gui/util/DefaultFileUpdateMonitor.java which is a class implementing FileUpdateMonitor. 
+The monitor of our directory was an instance of this DefaultFileUpdateMonitor class, and we had to alter the class a bit.  
+
 
 ## Requirements for the new feature or requirements affected by functionality being refactored
 
