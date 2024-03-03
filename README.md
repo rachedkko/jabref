@@ -29,16 +29,16 @@ For each team member, how much time was spent in
 
 | /                                        | Roxanne | Alexander | Rached  | Iley    | Marcus   |
 |------------------------------------------|---------|-----------|---------|---------|----------|
-| 1. plenary discussions/meetings          | 3.5h    | 3h        | 3h      | 3h      | ....     |
-| 2. discussions within parts of the group | 1h      | 0.5h      | 0.5h    | 0.5h    | ....     |
-| 3. reading documentation                 | 3h      | 1h        | 4.5h    | 3.5h    | ....     |
-| 4. configuration and setup               | 0.5h    | 1h        | 0.5h    | 2h      | ....     |
-| 5. analyzing code/output                 | 2h      | 5h        | 3h      | 3.5h    | ....     |
-| 6. writing documentation                 | 0h      | 0.5h      | 0.5h    | 0.25h   | ....     |
-| 7. writing code                          | 8h      | 8h        | 7h      | 3.5h    | ....     |
-| 8. running code                          | 2h      | 1h        | 1h      | 1.5h    | ....     |
-| 9. Writing the report                    | 3h      | 1h        | 0.5h    | 3h      | ....     |
-| **Total**                                | **23h** | **21h**   |**20.5h**| **20.75h**| ....     |
+| 1. plenary discussions/meetings          | 3.5h    | 3h        | .....   | 3h      | ....     |
+| 2. discussions within parts of the group | 1h      | 0.5h      | ....    | 0.5h    | ....     |
+| 3. reading documentation                 | 3h      | 1h        | ....    | 3.5h    | ....     |
+| 4. configuration and setup               | 0.5h    | 1h        | ....    | 2h      | ....     |
+| 5. analyzing code/output                 | 2h      | 5h        | ....    | 3.5h    | ....     |
+| 6. writing documentation                 | 0h      | 0.5h      | ....    | 0.25h   | ....     |
+| 7. writing code                          | 8h      | 8h        | ....    | 3.5h    | ....     |
+| 8. running code                          | 2h      | 1h        | ....    | 1.5h    | ....     |
+| 9. Writing the report                    | 3h      | 1h        | ....    | 3h      | ....     |
+| **Total**                                | **23h** | **21h**   | ....    | **20.75h**| ....     |
 
 
 For setting up tools and libraries (step 4), enumerate all dependencies you took care of and where you spent your time, if that time exceeds 30 minutes.
@@ -116,7 +116,9 @@ which corresponds to the last commit before any of our changes.
 
 #### More details 
 ###### Alexander 
-_TODO_
+Spearheaded the issue by creating a prototype solution and opening the dialogue with the maintainers (clients) to illicit requirements
+and direction for the solution. By using the prototype solution, subtasks were able to be discovered which eased the distribution
+of tasks as well as quirks that needs to be fixed or taken into consideration in further development. 
 
 ###### Roxanne 
 I worked on the fact that the monitor wasn't working recursively on the monitor, therefore I wrote the function 
