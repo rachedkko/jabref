@@ -44,6 +44,7 @@ For each team member, how much time was spent in
 For setting up tools and libraries (step 4), enumerate all dependencies
 you took care of and where you spent your time, if that time exceeds
 30 minutes.
+**Iley:** The configuration setup took longer than 30 minutes for me primarly because of differnces in versions and having to reinstall and find what issues were causing problems. There were also problems with the IDE they recommended using since I had never used it before and had to do several changes that were not directly obvious from the setup tutorial they had on the setup guide. I wrote 2 hours spent becasue of this since this is the working time i spent on it (not counting the download time or anything like that).   
 
 ## Overview of issue(s) and work done.
 
@@ -132,7 +133,7 @@ _TODO_
 _TODO_
 
 ###### Iley 
-_TODO_
+I worked on fixing a couple of issues the reviewers we had on our issue noticed. The first ones were simple refactorings where error messages and method names had to be changed. After this I changed where the listener was started, for this I had to examine how the listener worked and make sure that the changes I made did not cause any uninstentional changes to the program. Lastly I made a change to do so at most one scan job should wait at a time, this was the hardest part even though the final solution was short because I had to understand what was done and also the way it was implemented, which was done in away I hadn't seen before. 
 
 
 #### Optional
