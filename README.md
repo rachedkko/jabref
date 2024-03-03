@@ -39,7 +39,7 @@ For each team member, how much time was spent in
 | 8. running code                          | 2h      | 1h        | ....    | 1.5h    | ....     |
 | 9. Writing the report                    | 3h      | 1h        | ....    | 3h      | ....     |
 | **Total**                                | **23h** | **21h**   | ....    | **20.75h**| ....     |
->>>>>>> origin/report
+
 
 For setting up tools and libraries (step 4), enumerate all dependencies
 you took care of and where you spent your time, if that time exceeds
@@ -189,14 +189,6 @@ To understand the UML diagrams better here is a short explanation of the differe
 **The DefaultFileUpdateMonitor** was also changed by adding a new method called "addListenerForDirectory". 
 
 
-### Key changes/classes affected
-
-_TODO_ Non-optional : Key features affected by the issue are shown in UML class diagrams (for refactorings: include be- fore/after).
-Note: you do not have to show classes, fields, or methods that are not relevant, unless they help with the overall understanding. Typically, the diagram would contain 5–10 classes.
-
-Optional (point 1): Architectural overview.
-
-Optional (point 2): relation to design pattern(s).
 
 ## Overall experience
 
@@ -223,29 +215,26 @@ Optional (point 6): How would you put your work in context with best software en
 _TODO : Choose 4 points_ 
 
 As a recapitulation here are the points we've achieved for P+. 
-
-3. Relevant test cases (existing tests and updated/new tests related to the refactored code) are traced to requirements.
-
-
-4. Your patch is clean in that it (a) removes but does not comment out obsolete code and (b) does not produce extraneous output that is not required for your task (such as debug output) and (c) does not add unnecessary whitespace changes (such as adding or removing empty lines).
+- Point 3 : Relevant test cases (existing tests and updated/new tests related to the refactored code) are traced to requirements.
 
 
+- Point 4 : Your patch is clean in that it (a) removes but does not comment out obsolete code and (b) does not produce extraneous output that is not required for your task (such as debug output) and (c) does not add unnecessary whitespace changes (such as adding or removing empty lines).
 
-6. You can argue critically about the benefits, drawbacks, and limitations of your work carried out, in the context of current software engineering practice, such as the SEMAT kernel (covering alphas other than Team/Way of Working).
 
 
-5. Patches are accepted by the project, or considered for acceptance. (This requires a link to an accepted commit, or a discussion item.) Note: the patch must be submitted by the assignment deadline, but it may be accepted later.
+- Point 6 : You can argue critically about the benefits, drawbacks, and limitations of your work carried out, in the context of current software engineering practice, such as the SEMAT kernel (covering alphas other than Team/Way of Working).
+
+
+- Point 5 : Patches are accepted by the project, or considered for acceptance. (This requires a link to an accepted commit, or a discussion item.) Note: the patch must be submitted by the assignment deadline, but it may be accepted later.
 
 
 OR 
-8. In the context of Jonas Öberg's lecture last week, where do you put the project that you have chosen in an ecosystem of open-source and closed-source software? Is your project (as it is now) something that has replaced or can replace similar proprietary software? Why (not)?
+- Point 8 : In the context of Jonas Öberg's lecture last week, where do you put the project that you have chosen in an ecosystem of open-source and closed-source software? Is your project (as it is now) something that has replaced or can replace similar proprietary software? Why (not)?
 
 
 
-### TODO 
+### TODO
 
-- For P : point 4 and 7 
-
-- For P+ : point 3 and 8 
+- For P+ : point 3, 6 and 8 
 
 - At then end put links that are needed
