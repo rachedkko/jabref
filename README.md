@@ -29,16 +29,16 @@ For each team member, how much time was spent in
 
 | /                                        | Roxanne | Alexander | Rached  | Iley    | Marcus |
 |------------------------------------------|---------|-----------|---------|---------|--------|
-| 1. plenary discussions/meetings          | 3h      | 3h        | .....   | .....   | ....   |
-| 2. discussions within parts of the group | 0.5h    | 0.5h      | ....    | ...     | ....   |
-| 3. reading documentation                 | 3h      | 1h        | ....    | ...     | ....   |
-| 4. configuration and setup               | 0.5h    | 1h        | ....    | ...     | ....   |
-| 5. analyzing code/output                 | 2h      | 5h        | ....    | ...     | ....   |
-| 6. writing documentation                 | 0h      | 0.5h      | ....    | ...     | ....   |
-| 7. writing code                          | 6h      | 8h        | ....    | ...     | ....   |
-| 8. running code                          | 2h      | 1h        | ....    | ...     | ....   |
-| 9. Writing the report                    | 1h      | 1h        | ....    | ...     | ....   |
-| **Total**                                | **18h** | **21h**   | ....    | ...     | ....   |
+| 1. plenary discussions/meetings          | 3h      | 3h        | .....   | 3h      | ....   |
+| 2. discussions within parts of the group | 0.5h    | 0.5h      | ....    | 0.5h    | ....   |
+| 3. reading documentation                 | 3h      | 1h        | ....    | 3.5h    | ....   |
+| 4. configuration and setup               | 0.5h    | 1h        | ....    | 2h      | ....   |
+| 5. analyzing code/output                 | 2h      | 5h        | ....    | 3.5h    | ....   |
+| 6. writing documentation                 | 0h      | 0.5h      | ....    | 0.25h   | ....   |
+| 7. writing code                          | 6h      | 8h        | ....    | 3.5h    | ....   |
+| 8. running code                          | 2h      | 1h        | ....    | 1.5h    | ....   |
+| 9. Writing the report                    | 1h      | 1h        | ....    | 3h      | ....   |
+| **Total**                                | **18h** | **21h**   | ....    | **20.75h**| ....   |
 
 For setting up tools and libraries (step 4), enumerate all dependencies
 you took care of and where you spent your time, if that time exceeds
@@ -128,6 +128,42 @@ _TODO : insert link
 to action in JabRef, the last commit or our path_
 
 ## UML class diagram and its description
+### Before our changes
+![latexBefore](latexBefore.png)
+![defaultBefore](defaultBefore.png)
+### After our changes
+![latexAfter](latexAfter.png)
+![defaultAfter](defaultAfter.png)
+
+### Description of UML Diagrams
+To understand the UML diagrams better here is a short explanation of the different parts found in the diagrams:
+**A blue circle** with a “c” is a class.
+
+**A red circle with a “m”** is a method. The parameters to the method are inside the brackets after the name and to the far right of the line is the return type of the method
+
+**A purple circle with a “p”** is a property. The datatype of the property is to the far right of the row.
+
+**An orange circle with a “f”** is a field. The datatype of the field is to the far right of the row.  
+
+**An arrow starting with a diamond** is a aggregation
+
+**A blue solid arrow ending with a normal arrow triangle** is a inheritance
+
+**A dotted line with a arrow at the end without the bottom of the arrows triangle being filled in** is a dependency
+
+**A green padlock** means something is public
+
+**A red padlock means** something is private
+
+**A gray dot instead of a padlock** means it is package-private (the default when not set to anything else)
+
+### Visisble Changes in the UML Diagrams
+**The LatexCitationsTabViewModel** has a three new methods called updateListener, listenerOnDirectory and updateListener.
+
+**The LatexCitationsTab** has a new method called close. 
+
+**The DefaultFileUpdateMonitor** was also changed by adding a new method called "addListenerForDirectory". 
+
 
 ### Key changes/classes affected
 
