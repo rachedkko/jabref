@@ -212,8 +212,17 @@ Optional (point 6): How would you put your work in context with best software en
 ## P+
 
 As a recapitulation here are the points we've achieved for P+. 
-- Point 3 : Relevant test cases (existing tests and updated/new tests related to the refactored code) are traced to requirements.
+- Point 2 : Updates in the source are put into context with the overall software architecture and discussed, relating
+them to design patterns and/or refactoring patterns.
 
+
+In the case of the point 2 : we will take the example of our shutdown implementation :
+We added an empty close method in the `EntryEditorTab.java` which is the parent class of `LatexCitationsTab.java`.
+The goal of this is to be able to override this method close in `LatexCitationsTab.java` with the correct implementation.
+This is a very commun design pattern in Java and also in this project we found multiples example of it.
+Due to the overall software architecture and context, we thought it was a pertinent way of implementing it.
+
+`close` of `LatexCitationsTab.java` that became an override with the change of the  `EntryEditorTab.java`
 
 - Point 4 : Your patch is clean in that it (a) removes but does not comment out obsolete code and (b) does not produce extraneous output that is not required for your task (such as debug output) and (c) does not add unnecessary whitespace changes (such as adding or removing empty lines).
 
