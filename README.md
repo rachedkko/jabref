@@ -41,9 +41,8 @@ For each team member, how much time was spent in
 | **Total**                                | **23h** | **21h**   | ....    | **20.75h**| ....     |
 
 
-For setting up tools and libraries (step 4), enumerate all dependencies
-you took care of and where you spent your time, if that time exceeds
-30 minutes.
+For setting up tools and libraries (step 4), enumerate all dependencies you took care of and where you spent your time, if that time exceeds 30 minutes.
+
 **Iley:** The configuration setup took longer than 30 minutes for me primarly because of differnces in versions and having to reinstall and find what issues were causing problems. There were also problems with the IDE they recommended using since I had never used it before and had to do several changes that were not directly obvious from the setup tutorial they had on the setup guide. I wrote 2 hours spent becasue of this since this is the working time i spent on it (not counting the download time or anything like that).   
 
 ## Overview of issue(s) and work done.
