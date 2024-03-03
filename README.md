@@ -29,16 +29,16 @@ For each team member, how much time was spent in
 
 | /                                        | Roxanne | Alexander | Rached  | Iley    | Marcus   |
 |------------------------------------------|---------|-----------|---------|---------|----------|
-| 1. plenary discussions/meetings          | 3.5h    | 3h        | .....   | 3h      | ....     |
-| 2. discussions within parts of the group | 1h      | 0.5h      | ....    | 0.5h    | ....     |
-| 3. reading documentation                 | 3h      | 1h        | ....    | 3.5h    | ....     |
-| 4. configuration and setup               | 0.5h    | 1h        | ....    | 2h      | ....     |
-| 5. analyzing code/output                 | 2h      | 5h        | ....    | 3.5h    | ....     |
-| 6. writing documentation                 | 0h      | 0.5h      | ....    | 0.25h   | ....     |
-| 7. writing code                          | 8h      | 8h        | ....    | 3.5h    | ....     |
-| 8. running code                          | 2h      | 1h        | ....    | 1.5h    | ....     |
-| 9. Writing the report                    | 3h      | 1h        | ....    | 3h      | ....     |
-| **Total**                                | **23h** | **21h**   | ....    | **20.75h**| ....     |
+| 1. plenary discussions/meetings          | 3.5h    | 3h        | 3h      | 3h      | ....     |
+| 2. discussions within parts of the group | 1h      | 0.5h      | 0.5h    | 0.5h    | ....     |
+| 3. reading documentation                 | 3h      | 1h        | 4.5h    | 3.5h    | ....     |
+| 4. configuration and setup               | 0.5h    | 1h        | 0.5h    | 2h      | ....     |
+| 5. analyzing code/output                 | 2h      | 5h        | 3h      | 3.5h    | ....     |
+| 6. writing documentation                 | 0h      | 0.5h      | 0.5h    | 0.25h   | ....     |
+| 7. writing code                          | 8h      | 8h        | 7h      | 3.5h    | ....     |
+| 8. running code                          | 2h      | 1h        | 1h      | 1.5h    | ....     |
+| 9. Writing the report                    | 3h      | 1h        | 0.5h    | 3h      | ....     |
+| **Total**                                | **23h** | **21h**   |**20.5h**| **20.75h**| ....     |
 
 
 For setting up tools and libraries (step 4), enumerate all dependencies you took care of and where you spent your time, if that time exceeds 30 minutes.
@@ -129,7 +129,9 @@ I created a map to keep track of listeners which made sure that listeners were p
 _TODO_
 
 ###### Rached 
-_TODO_
+I worked on adding a proper shutdown, for that i wrote the shutdown method in `LatexCitationsTabViewModel.java` which i call in the method `close` of `LatexCitationsTab.java` that became an override with the change of the  `EntryEditorTab.java`
+I also added a method called closeAllTabs in `EntryEditor.java` which allows actions before closing a tab (in this case remove all the listeners).
+Finally this method is called in the method `OnClosed` in  `LibraryTab.java`, so it can remove all the listeners only when the library is closed as suggested in the issue's comment.
 
 ###### Iley 
 I worked on fixing a couple of issues the reviewers we had on our issue noticed. The first ones were simple refactorings where error messages and method names had to be changed. After this I changed where the listener was started, for this I had to examine how the listener worked and make sure that the changes I made did not cause any uninstentional changes to the program. Lastly I made a change to do so at most one scan job should wait at a time, this was the hardest part even though the final solution was short because I had to understand what was done and also the way it was implemented, which was done in away I hadn't seen before. 
