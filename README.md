@@ -29,16 +29,16 @@ For each team member, how much time was spent in
 
 | /                                        | Roxanne | Alexander | Rached  | Iley    | Marcus   |
 |------------------------------------------|---------|-----------|---------|---------|----------|
-| 1. plenary discussions/meetings          | 3.5h    | 3h        | 3h      | 3h      | ....     |
+| 1. plenary discussions/meetings          | 3h      | 3h        | 3h      | 3h      | ....     |
 | 2. discussions within parts of the group | 1h      | 0.5h      | 0.5h    | 0.5h    | ....     |
 | 3. reading documentation                 | 3h      | 1h        | 4.5h    | 3.5h    | ....     |
 | 4. configuration and setup               | 0.5h    | 0.5h      | 0.5h    | 2h      | ....     |
 | 5. analyzing code/output                 | 2h      | 5h        | 3h      | 3.5h    | ....     |
 | 6. writing documentation                 | 0h      | 0.5h      | 0.5h    | 0.25h   | ....     |
 | 7. writing code                          | 8h      | 8h        | 7h      | 3.5h    | ....     |
-| 8. running code                          | 2h      | 1h        | 1h      | 1.5h    | ....     |
+| 8. running code                          | 1.5h    | 1h        | 1h      | 1.5h    | ....     |
 | 9. Writing the report                    | 3h      | 1h        | 0.5h    | 3h      | ....     |
-| **Total**                                | **23h** | **20.5h** |**20.5h**| **20.75h**| ....     |
+| **Total**                                | **22h** | **20.5h** |**20.5h**| **20.75h**| ....     |
 
 
 For setting up tools and libraries (step 4), enumerate all dependencies you took care of and where you spent your time, if that time exceeds 30 minutes.
@@ -141,19 +141,14 @@ I worked on fixing a couple of issues the reviewers we had on our issue noticed.
 
 #### Optional
 Optional (point 4): To check that our patch is clean, the easiest way to do so is by going in the Action tab of Jabref
-and looking for our final commit (_TODO : put link of this_). As you can see, all tests checking for style pass, which means 
+and looking for our final commit (https://github.com/JabRef/jabref/actions/runs/8132451279). As you can see, all tests checking for style pass, which means 
 that our patch respects the style of JabRef. You may also go on the  `latexcitation-filemonitor-issue-10585` and take a look at the 
 latest code on it to check that our patch is clean. 
 
-Optional (point 5): considered for acceptance (passes all automated checks).
-_TODO : link to closed issue / merged pull request, if it has been accepted or remove this section_
-
 ## Test results
 
-The final version of the tests ran on our code can be found here : 
-
-_TODO : insert link
-to action in JabRef, the last commit or our path_
+The tests ran on the final version of our code can be found here :
+https://github.com/JabRef/jabref/actions/runs/8132451279
 
 ## UML class diagram and its description
 ### Before our changes
@@ -216,8 +211,6 @@ Optional (point 6): How would you put your work in context with best software en
 
 ## P+
 
-_TODO : Choose 4 points_ 
-
 As a recapitulation here are the points we've achieved for P+. 
 - Point 3 : Relevant test cases (existing tests and updated/new tests related to the refactored code) are traced to requirements.
 
@@ -229,10 +222,6 @@ As a recapitulation here are the points we've achieved for P+.
 - Point 6 : You can argue critically about the benefits, drawbacks, and limitations of your work carried out, in the context of current software engineering practice, such as the SEMAT kernel (covering alphas other than Team/Way of Working).
 
 
-- Point 5 : Patches are accepted by the project, or considered for acceptance. (This requires a link to an accepted commit, or a discussion item.) Note: the patch must be submitted by the assignment deadline, but it may be accepted later.
-
-
-OR 
 - Point 8 : In the context of Jonas Öberg's lecture last week, where do you put the project that you have chosen in an ecosystem of open-source and closed-source software? Is your project (as it is now) something that has replaced or can replace similar proprietary software? Why (not)?
 
 
