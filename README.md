@@ -107,9 +107,6 @@ Further Requirements (From Development and Reviews)
 
   - From our current progress, additional refactoring and implementation of a new file watcher was requested in order to improve on our current implementation, such that it will reduce computational time and energy costs when running the project. 
 
-
-Optional (point 3): trace tests to requirements.
-
 ## Code changes
 
 ### Patch
@@ -215,7 +212,7 @@ Optional (point 6): How would you put your work in context with best software en
 
 ## P+
 
-As a recapitulation here are the points we've achieved for P+. 
+Finally, here are the points we've achieved for P+ : 
 - Point 2 : Updates in the source are put into context with the overall software architecture and discussed, relating
 them to design patterns and/or refactoring patterns.
 
@@ -244,8 +241,3 @@ While our solution is considered acceptable by our stakeholders for us to hand o
 In our case, JabRef is under the MIT License, therefore we consider it a free and open-source Permissive license which allows proprietization for both developers and users. Additionally, as it is available on GitHub the source code is free to be distributed and reused by others. In our case, anyone can freely contribute and utilise the software by simply requesting the maintainers to be assigned to ongoing issues in GitHub's issue tracker, allowing for active collaboration between a multitude of developers easily, and therefore it is considered an open-source software.
 
 In JabRef's case, it is capable of replacing several proprietary software due to being free to use for users. Simply install the software and anyone can use it without incurring any monetary fees while still retaining many of the features that are included in other proprietary/closed-source software. Therefore, the project is a suitable free alternative for citation management and is considered a superior software to several similar proprietary software. However, due to it being open-source software, there exists a multitude of issues (currently, there are 400+ ongoing issues) in the software that are not being completely addressed quick enough. Some issues persist for a long while and negatively affect user experience, and that is where well-maintained existing proprietary and alternative open-source software with a larger community comes in. The former means that quality is more assured as well as security, while the latter like Zotero with a larger community involvement means issues are usually addressed and more features are outputted at a faster rate. JabRef is still slightly rough around the edges, and in general, it can replace several proprietary software but there do exist superior paid/free alternatives.  
-
-
-### TODO
-
-- At then end put links that are needed
