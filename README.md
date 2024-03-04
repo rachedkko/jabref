@@ -142,7 +142,7 @@ I worked on fixing a couple of issues the reviewers we had on our issue noticed.
 ## Test results
 
 The tests ran on the final version of our code can be found here :
-https://github.com/JabRef/jabref/actions/runs/8132451279
+https://github.com/JabRef/jabref/actions/runs/8135513650
 
 ## UML class diagram and its description
 ### Before our changes
@@ -217,7 +217,7 @@ Due to the overall software architecture and context, we thought that the Templa
 #### Point 4 : Your patch is clean in that it (a) removes but does not comment out obsolete code and (b) does not produce extraneous output that is not required for your task (such as debug output) and (c) does not add unnecessary whitespace changes (such as adding or removing empty lines).
   
 To check that our patch is clean, the easiest way to do so is by going in the Action tab of Jabref
-and looking for our final commit (https://github.com/JabRef/jabref/actions/runs/8132451279). As you can see, all tests checking for style pass, which means 
+and looking for our final commit (https://github.com/JabRef/jabref/actions/runs/8135513650). As you can see, all tests checking for style pass, which means 
 that our patch respects the style of JabRef. You may also go on the  `latexcitation-filemonitor-issue-10585` and take a look at the 
 latest code on it to check that our patch is clean. 
 
