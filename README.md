@@ -29,16 +29,16 @@ For each team member, how much time was spent in
 
 | /                                        | Roxanne | Alexander | Rached  | Iley    | Marcus   |
 |------------------------------------------|---------|-----------|---------|---------|----------|
-| 1. plenary discussions/meetings          | 3h      | 3h        | 3h      | 3h      | ....     |
-| 2. discussions within parts of the group | 1h      | 0.5h      | 0.5h    | 0.5h    | ....     |
-| 3. reading documentation                 | 3h      | 1h        | 4.5h    | 3.5h    | ....     |
-| 4. configuration and setup               | 0.5h    | 0.5h      | 0.5h    | 2h      | ....     |
-| 5. analyzing code/output                 | 2h      | 5h        | 3h      | 3.5h    | ....     |
-| 6. writing documentation                 | 0h      | 0.5h      | 0.5h    | 0.25h   | ....     |
-| 7. writing code                          | 8h      | 8h        | 7h      | 3.5h    | ....     |
-| 8. running code                          | 1.5h    | 1h        | 1h      | 1.5h    | ....     |
-| 9. Writing the report                    | 3h      | 1h        | 0.5h    | 3h      | ....     |
-| **Total**                                | **22h** | **20.5h** |**20.5h**| **20.75h**| ....     |
+| 1. plenary discussions/meetings          | 3h      | 3h        | 3h      | 3h      | 3h       |
+| 2. discussions within parts of the group | 1h      | 0.5h      | 0.5h    | 0.5h    | 0.5h     |
+| 3. reading documentation                 | 3h      | 1h        | 4.5h    | 3.5h    | 3h       |
+| 4. configuration and setup               | 0.5h    | 0.5h      | 0.5h    | 2h      | 1h       |
+| 5. analyzing code/output                 | 2h      | 5h        | 3h      | 3.5h    | 3h       |
+| 6. writing documentation                 | 0h      | 0.5h      | 0.5h    | 0.25h   | 0.25h    |
+| 7. writing code                          | 8h      | 8h        | 7h      | 3.5h    | 6h       |
+| 8. running code                          | 1.5h    | 1h        | 1h      | 1.5h    | 1h       |
+| 9. Writing the report                    | 3h      | 1h        | 0.5h    | 3h      | 2.5h     |
+| **Total**                                | **22h** | **20.5h** |**20.5h**| **20.75h** | **20.25h** |
 
 
 For setting up tools and libraries (step 4), enumerate all dependencies you took care of and where you spent your time, if that time exceeds 30 minutes.
@@ -102,6 +102,10 @@ Further Requirements (From Development and Reviews)
 - LatexParser Tests **(LATEXPARSERTESTS)**
 
   - Along with modifications to LatexParser should come their tests
+ 
+- LatexCitationTabViewModel and LatexParserResult Refactoring, and New File Watcher **(ENERGYSAVING)**
+
+  - From our current progress, additional refactoring and implementation of a new file watcher was requested in order to improve on our current implementation, such that it will reduce computational time and energy costs when running the project. 
 
 
 Optional (point 3): trace tests to requirements.
@@ -116,9 +120,9 @@ which corresponds to the last commit before any of our changes.
 
 #### More details 
 ###### Alexander 
-Spearheaded the issue by creating a prototype solution and opening the dialogue with the maintainers (clients) to illicit requirements
-and direction for the solution. By using the prototype solution, subtasks were able to be discovered which eased the distribution
-of tasks as well as quirks that needs to be fixed or taken into consideration in further development. 
+Spearheaded the issue by creating a prototype solution and opening the dialogue with the maintainers (clients) to elicit requirements
+and direction for the solution. Using the prototype solution, subtasks were able to be discovered which eased the distribution
+of tasks and quirks that need to be fixed or taken into consideration in further development. 
 
 ###### Roxanne 
 I worked on the fact that the monitor wasn't working recursively on the monitor, therefore I wrote the function 
@@ -127,16 +131,16 @@ directories and a change happened in an old directory, reload was triggered. Tha
 with a `FileUpdateListener` that didn't match the one in `.addListenerOnDirector`. Therefore the listener was never removed. 
 I created a map to keep track of listeners which made sure that listeners were probably removed. 
 
-###### Marcus 
-_TODO_
+###### Marcus (Sung Kit Ko)
+As per the requirement of the stakeholder in finalising a complete solution, my main job was refactoring `LatexCitationsTabViewModel.java` by creating a new `CitationFinder` class in the `org.jabref.logic.texparser` package as per the request of the maintainers, then moving the `searchAndParse` and `searchDirectory` methods to the new class and removing redundant imports to help improve performance and prepare for future implementations. I also worked on implementing a test case for `DefaultFileUpdateMonitor.java` according to the stakeholder's suggestions in order to verify whether new files are being added/listened to.
 
 ###### Rached 
-I worked on adding a proper shutdown, for that i wrote the shutdown method in `LatexCitationsTabViewModel.java` which i call in the method `close` of `LatexCitationsTab.java` that became an override with the change of the  `EntryEditorTab.java`
-I also added a method called closeAllTabs in `EntryEditor.java` which allows actions before closing a tab (in this case remove all the listeners).
-Finally this method is called in the method `OnClosed` in  `LibraryTab.java`, so it can remove all the listeners only when the library is closed as suggested in the issue's comment.
+I worked on adding a proper shutdown, for that I wrote the shutdown method in `LatexCitationsTabViewModel.java` which I called in the method `close` of `LatexCitationsTab.java` that became an override with the change of the  `EntryEditorTab.java`
+I also added a method called closeAllTabs in `EntryEditor.java` which allows actions before closing a tab (in this case removing all the listeners).
+Finally, this method is called in the method `OnClosed` in  `LibraryTab.java`, so it can remove all the listeners only when the library is closed as suggested in the issue's comment.
 
 ###### Iley 
-I worked on fixing a couple of issues the reviewers we had on our issue noticed. The first ones were simple refactorings where error messages and method names had to be changed. After this I changed where the listener was started, for this I had to examine how the listener worked and make sure that the changes I made did not cause any uninstentional changes to the program. Lastly I made a change to do so at most one scan job should wait at a time, this was the hardest part even though the final solution was short because I had to understand what was done and also the way it was implemented, which was done in away I hadn't seen before. 
+I worked on fixing a couple of issues the reviewers we had on our issue noticed. The first ones were simple refactorings where error messages and method names had to be changed. After this I changed where the listener started, for this, I had to examine how the listener worked and make sure that the changes I made did not cause any unintentional changes to the program. Lastly, I made a change to do so at most one scan job should wait at a time, this was the hardest part even though the final solution was short because I had to understand what was done and also the way it was implemented, which was done in a way I hadn't seen before. 
 
 
 #### Optional
@@ -191,10 +195,10 @@ To understand the UML diagrams better here is a short explanation of the differe
 
 ## Overall experience
 
-In this project we learned how to work in the open-source community and more generally how to work with clients. 
+In this project, we learned how to work in the open-source community and more generally how to work with clients. 
 We had to adapt our coding style to the existing one of JabRef. We sometimes had ideas of how to resolve an issue
 but that wasn't the way our client wanted us to tackle it. In a nutshell, we learned how to discuss with a client understand their 
-needs and wants and bring solution to them.
+needs and wants and bring solutions to them.
 
 Moreover, we learned how to enter an existing project. It was hard at first not to be lost due to the size of JabRef and the number of files, but 
 thanks to their great extended documentation and their reactive members this was quite a nice journey.
@@ -202,7 +206,7 @@ thanks to their great extended documentation and their reactive members this was
 At the end of this assignment, we evaluated our team as being in the state "Collaborating". Having a single common issue for our team really 
 made us work together and made us feel united. We communicated a lot during this assignment since we worked on the same file / functions
 we had to code on top of each other, so it was really important to understand what each of us had done. This assignment also 
-rebuild the trust we had in our team since everyone was on time with their tasks. 
+rebuilt the trust we had in our team since everyone was on time with their tasks. 
 
 
 
@@ -230,13 +234,19 @@ Due to the overall software architecture and context, we thought it was a pertin
 
 - Point 6 : You can argue critically about the benefits, drawbacks, and limitations of your work carried out, in the context of current software engineering practice, such as the SEMAT kernel (covering alphas other than Team/Way of Working).
 
+The alpha we will use to critically analyse our work will be the "Requirements" alpha; we found this alpha to be the most applicable as the point of this project is to help address the issue of our stakeholders, in this case, the maintainers of the codebase. Through this, we can use the satisfaction of our stakeholders to determine our current capabilities. We have determined for the "Requirements" alpha, we are at the "Coherent" stage. 
+
+Our team and the stakeholders (in this case, the maintainers of the codebase) have come to an agreement on what needs to be achieved for this issue to be resolved as we accepted the assignment. The stakeholders have stated beforehand that the issue is "the LaTeX citations are NOT backed by the file monitor." Therefore, it is clear that the rationale is to properly implement a SHUTDOWN method to can back up the citations. Our team has agreed with the stakeholder on what we are aiming to accomplish through our involvement, and that the priority for achieving this requirement is not highly urgent, but important and benefit users. 
+
+While our solution is considered acceptable by our stakeholders for us to hand off the project with an initial contribution, there is a multitude of optimization issues that we must address to meet the stakeholder's ever-changing requirements, as our implementations sometimes conflict with our stakeholders' requirements, but those are soon addressed by our team. The good news is, the team has managed get the stakeholders to agree to a set of final requirements that they want to achieve with our implementation so that our solution can be considered to be integrated into the final product.
 
 - Point 8 : In the context of Jonas Öberg's lecture last week, where do you put the project that you have chosen in an ecosystem of open-source and closed-source software? Is your project (as it is now) something that has replaced or can replace similar proprietary software? Why (not)?
 
+In our case, JabRef is under the MIT License, therefore we consider it a free and open-source Permissive license which allows proprietization for both developers and users. Additionally, as it is available on GitHub the source code is free to be distributed and reused by others. In our case, anyone can freely contribute and utilise the software by simply requesting the maintainers to be assigned to ongoing issues in GitHub's issue tracker, allowing for active collaboration between a multitude of developers easily, and therefore it is considered an open-source software.
+
+In JabRef's case, it is capable of replacing several proprietary software due to being free to use for users. Simply install the software and anyone can use it without incurring any monetary fees while still retaining many of the features that are included in other proprietary/closed-source software. Therefore, the project is a suitable free alternative for citation management and is considered a superior software to several similar proprietary software. However, due to it being open-source software, there exists a multitude of issues (currently, there are 400+ ongoing issues) in the software that are not being completely addressed quick enough. Some issues persist for a long while and negatively affect user experience, and that is where well-maintained existing proprietary and alternative open-source software with a larger community comes in. The former means that quality is more assured as well as security, while the latter like Zotero with a larger community involvement means issues are usually addressed and more features are outputted at a faster rate. JabRef is still slightly rough around the edges, and in general, it can replace several proprietary software but there do exist superior paid/free alternatives.  
 
 
 ### TODO
-
-- For P+ : point 3, 6 and 8 
 
 - At then end put links that are needed
