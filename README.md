@@ -139,13 +139,6 @@ Finally, this method is called in the method `OnClosed` in  `LibraryTab.java`, s
 ###### Iley 
 I worked on fixing a couple of issues the reviewers we had on our issue noticed. The first ones were simple refactorings where error messages and method names had to be changed. After this I changed where the listener started, for this, I had to examine how the listener worked and make sure that the changes I made did not cause any unintentional changes to the program. Lastly, I made a change to do so at most one scan job should wait at a time, this was the hardest part even though the final solution was short because I had to understand what was done and also the way it was implemented, which was done in a way I hadn't seen before. 
 
-
-#### Optional
-Optional (point 4): To check that our patch is clean, the easiest way to do so is by going in the Action tab of Jabref
-and looking for our final commit (https://github.com/JabRef/jabref/actions/runs/8132451279). As you can see, all tests checking for style pass, which means 
-that our patch respects the style of JabRef. You may also go on the  `latexcitation-filemonitor-issue-10585` and take a look at the 
-latest code on it to check that our patch is clean. 
-
 ## Test results
 
 The tests ran on the final version of our code can be found here :
@@ -206,16 +199,12 @@ we had to code on top of each other, so it was really important to understand wh
 rebuilt the trust we had in our team since everyone was on time with their tasks. 
 
 
-
-Optional (point 6): How would you put your work in context with best software engineering practice?
-
-
 ## P+
 
 Finally, here are the points we've achieved for P+ : 
-- Point 2 : Updates in the source are put into context with the overall software architecture and discussed, relating
-them to design patterns and/or refactoring patterns.
 
+
+#### Point 2 : Updates in the source are put into context with the overall software architecture and discussed, relating them to design patterns and/or refactoring patterns. 
 
 In the case of the point 2 : we will take the example of our shutdown implementation :
 We added an empty close method in the `EntryEditorTab.java` which is the parent class of `LatexCitationsTab.java`.
@@ -224,11 +213,16 @@ This is a very common design pattern which is called "Template Method" : it's a 
 It is commonly used in java and even more specifically in this project : we found multiples example of it.
 Due to the overall software architecture and context, we thought that the Template Method was pertinent design pattern to implement a proper shutdown.
 
-- Point 4 : Your patch is clean in that it (a) removes but does not comment out obsolete code and (b) does not produce extraneous output that is not required for your task (such as debug output) and (c) does not add unnecessary whitespace changes (such as adding or removing empty lines).
+
+#### Point 4 : Your patch is clean in that it (a) removes but does not comment out obsolete code and (b) does not produce extraneous output that is not required for your task (such as debug output) and (c) does not add unnecessary whitespace changes (such as adding or removing empty lines).
+  
+To check that our patch is clean, the easiest way to do so is by going in the Action tab of Jabref
+and looking for our final commit (https://github.com/JabRef/jabref/actions/runs/8132451279). As you can see, all tests checking for style pass, which means 
+that our patch respects the style of JabRef. You may also go on the  `latexcitation-filemonitor-issue-10585` and take a look at the 
+latest code on it to check that our patch is clean. 
 
 
-
-- Point 6 : You can argue critically about the benefits, drawbacks, and limitations of your work carried out, in the context of current software engineering practice, such as the SEMAT kernel (covering alphas other than Team/Way of Working).
+#### Point 6 : You can argue critically about the benefits, drawbacks, and limitations of your work carried out, in the context of current software engineering practice, such as the SEMAT kernel (covering alphas other than Team/Way of Working).
 
 The alpha we will use to critically analyse our work will be the "Requirements" alpha; we found this alpha to be the most applicable as the point of this project is to help address the issue of our stakeholders, in this case, the maintainers of the codebase. Through this, we can use the satisfaction of our stakeholders to determine our current capabilities. We have determined for the "Requirements" alpha, we are at the "Coherent" stage. 
 
@@ -236,7 +230,7 @@ Our team and the stakeholders (in this case, the maintainers of the codebase) ha
 
 While our solution is considered acceptable by our stakeholders for us to hand off the project with an initial contribution, there is a multitude of optimization issues that we must address to meet the stakeholder's ever-changing requirements, as our implementations sometimes conflict with our stakeholders' requirements, but those are soon addressed by our team. The good news is, the team has managed get the stakeholders to agree to a set of final requirements that they want to achieve with our implementation so that our solution can be considered to be integrated into the final product.
 
-- Point 8 : In the context of Jonas Öberg's lecture last week, where do you put the project that you have chosen in an ecosystem of open-source and closed-source software? Is your project (as it is now) something that has replaced or can replace similar proprietary software? Why (not)?
+#### Point 8 : In the context of Jonas Öberg's lecture last week, where do you put the project that you have chosen in an ecosystem of open-source and closed-source software? Is your project (as it is now) something that has replaced or can replace similar proprietary software? Why (not)?
 
 In our case, JabRef is under the MIT License, therefore we consider it a free and open-source Permissive license which allows proprietization for both developers and users. Additionally, as it is available on GitHub the source code is free to be distributed and reused by others. In our case, anyone can freely contribute and utilise the software by simply requesting the maintainers to be assigned to ongoing issues in GitHub's issue tracker, allowing for active collaboration between a multitude of developers easily, and therefore it is considered an open-source software.
 
