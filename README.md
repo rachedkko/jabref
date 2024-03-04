@@ -223,10 +223,9 @@ them to design patterns and/or refactoring patterns.
 In the case of the point 2 : we will take the example of our shutdown implementation :
 We added an empty close method in the `EntryEditorTab.java` which is the parent class of `LatexCitationsTab.java`.
 The goal of this is to be able to override this method close in `LatexCitationsTab.java` with the correct implementation.
-This is a very commun design pattern in Java and also in this project we found multiples example of it.
-Due to the overall software architecture and context, we thought it was a pertinent way of implementing it.
-
-`close` of `LatexCitationsTab.java` that became an override with the change of the  `EntryEditorTab.java`
+This is a very common design pattern which is called "Template Method" : it's a behavioral design pattern that defines the skeleton of an algorithm in the superclass but lets subclasses override specific steps of the algorithm without changing its structure.
+It is commonly used in java and even more specifically in this project : we found multiples example of it.
+Due to the overall software architecture and context, we thought that the Template Method was pertinent design pattern to implement a proper shutdown.
 
 - Point 4 : Your patch is clean in that it (a) removes but does not comment out obsolete code and (b) does not produce extraneous output that is not required for your task (such as debug output) and (c) does not add unnecessary whitespace changes (such as adding or removing empty lines).
 
